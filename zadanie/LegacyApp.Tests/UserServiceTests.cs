@@ -50,6 +50,27 @@ public class UserServiceTests
     }
     
     
+    // AddUser_ReturnsFalseWhenYoungerThen21YearsOld
+    [Fact]
+    public void AddUser_ReturnsFalseWhenYoungerThen21YearsOld()
+    {
+        // Arrange
+        var userService = new UserService();
+
+        // Act
+        var result = userService.AddUser(
+            "Jan", 
+            "Kowalski", 
+            "kowalski@kowalski.pl",
+            DateTime.Parse("2023-04-20"),
+            1
+        );
+
+        // Assert
+        
+        Assert.False(result);
+    }
+    
     
     
     // AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist
