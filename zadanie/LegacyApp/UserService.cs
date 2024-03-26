@@ -68,5 +68,17 @@ namespace LegacyApp
             UserDataAccess.AddUser(user);
             return true;
         }
+
+        
+
+        private bool CheckIfNamesCorrect(string firstName, string lastName)
+        {
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
