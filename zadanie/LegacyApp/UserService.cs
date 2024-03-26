@@ -8,7 +8,7 @@ namespace LegacyApp
         {
             if (!CheckIfNamesCorrect(firstName, lastName)) return false;
             
-            
+            if (!CheckIsMailCorrect(email)) return false;
 
             if (age < 21)
             {
