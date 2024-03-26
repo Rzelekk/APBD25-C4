@@ -69,7 +69,17 @@ namespace LegacyApp
             return true;
         }
 
-        
+ 
+
+        private bool CheckIsMailCorrect(string email)
+        {
+            if (!email.Contains("@") && !email.Contains("."))
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         private bool CheckIfNamesCorrect(string firstName, string lastName)
         {
