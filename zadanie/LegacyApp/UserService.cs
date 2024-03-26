@@ -10,10 +10,7 @@ namespace LegacyApp
             
             if (!CheckIsMailCorrect(email)) return false;
 
-            if (age < 21)
-            {
-                return false;
-            }
+            if (!CheckIsAgeOver21(dateOfBirth)) return false;
 
             var clientRepository = new ClientRepository();
             var client = clientRepository.GetById(clientId);
