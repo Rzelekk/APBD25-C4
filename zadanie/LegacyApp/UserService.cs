@@ -14,14 +14,7 @@ namespace LegacyApp
 
             var client = ClientCreate(firstName, lastName, email, dateOfBirth, clientId, out var user);
 
-            var user = new User
-            {
-                Client = client,
-                DateOfBirth = dateOfBirth,
-                EmailAddress = email,
-                FirstName = firstName,
-                LastName = lastName
-            };
+            CheckClientImportanceAndSetupCreditsLimits(client, user);
 
             if (client.Type == "VeryImportantClient")
             {
