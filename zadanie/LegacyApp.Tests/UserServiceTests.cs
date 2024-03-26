@@ -134,7 +134,29 @@ public class UserServiceTests
         Assert.True(result);
     }
     
-   
+    // AddUser_ReturnsFalseWhenNormalClientWithNoCreditLimit
+    
+    [Fact]
+    public void AddUser_ReturnsFalseWhenNormalClientWithNoCreditLimit()
+    {
+        // Arrange
+        var userService = new UserService();
+        
+        // Act
+        var result = userService.AddUser(
+            "Jan", 
+            "Kowalski", 
+            "andrzejewicz@wp.pl",
+            DateTime.Parse("2000-01-01"),
+            1
+        );
+    
+        // Assert
+        
+        Assert.False(result);
+    }
+    
+    
     // AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist
     [Fact]
     public void AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist()
