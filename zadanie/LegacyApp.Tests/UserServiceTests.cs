@@ -178,6 +178,26 @@ public class UserServiceTests
     }
     
    
+    // AddUser_ThrowsExceptionWhenUserNoCreditLimitExistsForUser
+    [Fact]
+    public void AddUser_ThrowsExceptionWhenUserNoCreditLimitExistsForUser()
+    {
+        // Arrange
+        var userService = new UserService();
+        
+        // Act
+        Action action = () => userService.AddUser(
+            "Jacek", 
+            "Andrzejewicz", 
+            "kowalski173@kowal.pl",
+            DateTime.Parse("2000-01-01"),
+            6
+        );
+        // Assert
+        
+        Assert.Throws<ArgumentException>(action);
+    }
+    
     // AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist
     [Fact]
     public void AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist()
