@@ -177,7 +177,6 @@ public class UserServiceTests
         Assert.Throws<ArgumentException>(action);
     }
     
-   
     // AddUser_ThrowsExceptionWhenUserNoCreditLimitExistsForUser
     [Fact]
     public void AddUser_ThrowsExceptionWhenUserNoCreditLimitExistsForUser()
