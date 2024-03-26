@@ -69,7 +69,17 @@ namespace LegacyApp
             return true;
         }
 
-     
+   
+
+        private bool ChceckCreditLimit(User user)
+        {
+            if (user.HasCreditLimit && user.CreditLimit < 500)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         private void CheckClientImportanceAndSetupCreditsLimits(Client client, User user)
         {
