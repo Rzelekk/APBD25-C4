@@ -12,8 +12,7 @@ namespace LegacyApp
 
             if (!CheckIsAgeOver21(dateOfBirth)) return false;
 
-            var clientRepository = new ClientRepository();
-            var client = clientRepository.GetById(clientId);
+            var client = ClientCreate(firstName, lastName, email, dateOfBirth, clientId, out var user);
 
             var user = new User
             {
