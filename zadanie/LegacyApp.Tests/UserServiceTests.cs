@@ -92,6 +92,27 @@ public class UserServiceTests
         Assert.True(result);
     }
     
+    // AddUser_ReturnsTrueWhenImportantClient
+    [Fact]
+    public void AddUser_ReturnsTrueWhenImportantClient()
+    {
+        // Arrange
+        var userService = new UserService();
+        
+        // Act
+        var result = userService.AddUser(
+            "Jan", 
+            "Smith", 
+            "kowalski@kowal.pl",
+            DateTime.Parse("2000-01-01"),
+            3
+        );
+
+        // Assert
+        
+        Assert.True(result);
+    }
+    
     
     // AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist
     [Fact]
