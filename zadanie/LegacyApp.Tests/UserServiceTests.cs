@@ -26,20 +26,21 @@ public class UserServiceTests
     }
     
     [Fact]
-    public void AddUser_ThrowsExceptionWhenClientDoesNotExist()
+    public void AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist()
     {
+        
         // Arrange
         var userService = new UserService();
-        
+
         // Act
-        Action action = () => { userService.AddUser(
-            "Jan",
-            "Kowalski",
-            "kowalski@kowal.com",
+        Action action = () => userService.AddUser(
+            "Jan", 
+            "Kowalski", 
+            "kowalski@kowalski.pl",
             DateTime.Parse("2000-01-01"),
             100
-        );};
-        
+        );
+
         // Assert
         Assert.Throws<ArgumentException>(action);
     }
