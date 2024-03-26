@@ -156,7 +156,28 @@ public class UserServiceTests
         Assert.False(result);
     }
     
+    // // AddUser_ThrowsExceptionWhenUserDoesNotExist
+    [Fact]
+    public void AddUser_ThrowsExceptionWhenUserDoesNotExist()
+    {
+        // Arrange
+        var userService = new UserService();
+        
+        // Act
+        Action action = () =>  userService.AddUser(
+            "Jan", 
+            "Cokolwiek", 
+            "kowalski@koowwal.pl",
+            DateTime.Parse("2000-01-01"),
+            1
+        );
     
+        // Assert
+        
+        Assert.Throws<ArgumentException>(action);
+    }
+    
+   
     // AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist
     [Fact]
     public void AddUser_ThrowsArgumentExceptionWhenClientDoesNotExist()
